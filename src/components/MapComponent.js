@@ -79,9 +79,11 @@ class MapComponent extends Component {
     renderExhibitors = () => {
         const stands = DataService.getAllStands();
         console.log(stands)
-        return (
-            <Rectangle bounds={this.calculateRectangleCoords()} color={"#ff7800"} />
-        )
+        stands.forEach((stand) => {
+            return (
+                <Rectangle bounds={stand.calculatedCoords} color={"#ff7800"} />
+            )
+        })
     }
 
     render() {
